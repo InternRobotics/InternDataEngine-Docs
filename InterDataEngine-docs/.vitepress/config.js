@@ -4,6 +4,7 @@ import { katex } from '@mdit/plugin-katex'
 export default defineConfig({
   title: 'InternDataEngine',
   base: '/InternDataEngine-Docs/',
+  ignoreDeadLinks: true,
   
   themeConfig: {
     logo: '/logo.svg',
