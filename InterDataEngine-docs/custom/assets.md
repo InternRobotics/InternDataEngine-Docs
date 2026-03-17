@@ -42,22 +42,22 @@ Before conversion, preprocess the OBJ file to ensure it meets the following requ
 You can perform these adjustments in **MeshLab**:
 
 <p align="center">
-  <a href="../public/meshlab_setorigin.jpg" target="_blank">
-    <img src="../public/meshlab_setorigin.jpg" alt="Set Origin in MeshLab" style="width: 100%; cursor: zoom-in;">
+  <a href="/meshlab_setorigin.jpg" target="_blank">
+    <img src="/meshlab_setorigin.jpg" alt="Set Origin in MeshLab" style="width: 100%; cursor: zoom-in;">
   </a>
 </p>
 <p align="center"><em>Setting the origin point at the object center in MeshLab</em></p>
 
 <p align="center">
-  <a href="../public/meshlab_set_scale.jpg" target="_blank">
-    <img src="../public/meshlab_set_scale.jpg" alt="Set Scale in MeshLab" style="width: 100%; cursor: zoom-in;">
+  <a href="/meshlab_set_scale.jpg" target="_blank">
+    <img src="/meshlab_set_scale.jpg" alt="Set Scale in MeshLab" style="width: 100%; cursor: zoom-in;">
   </a>
 </p>
 <p align="center"><em>Setting the correct scale (units) for the object</em></p>
 
 <p align="center">
-  <a href="../public/meshlab_set_rotation.jpg" target="_blank">
-    <img src="../public/meshlab_set_rotation.jpg" alt="Set Rotation in MeshLab" style="width: 100%; cursor: zoom-in;">
+  <a href="/meshlab_set_rotation.jpg" target="_blank">
+    <img src="/meshlab_set_rotation.jpg" alt="Set Rotation in MeshLab" style="width: 100%; cursor: zoom-in;">
   </a>
 </p>
 <p align="center"><em>Rotating the object to align with canonical pose</em></p>
@@ -76,8 +76,8 @@ python asset_usd_converter.py --folders /path/to/obj/folder
 This converts the OBJ to USD format and saves it as `Aligned_obj.usd` in the same directory.
 
 <p align="center">
-  <a href="../public/obj2usd.jpg" target="_blank">
-    <img src="../public/obj2usd.jpg" alt="OBJ to USD Conversion" style="width: 100%; cursor: zoom-in;">
+  <a href="/obj2usd.jpg" target="_blank">
+    <img src="/obj2usd.jpg" alt="OBJ to USD Conversion" style="width: 100%; cursor: zoom-in;">
   </a>
 </p>
 <p align="center"><em>Converting OBJ to USD format</em></p>
@@ -91,8 +91,8 @@ python make_rigid.py --usd_path /path/to/Aligned_obj.usd
 ```
 
 <p align="center">
-  <a href="../public/usd_add_rigid.jpg" target="_blank">
-    <img src="../public/usd_add_rigid.jpg" alt="Add Rigid Body Properties" style="width: 100%; cursor: zoom-in;">
+  <a href="/usd_add_rigid.jpg" target="_blank">
+    <img src="/usd_add_rigid.jpg" alt="Add Rigid Body Properties" style="width: 100%; cursor: zoom-in;">
   </a>
 </p>
 <p align="center"><em>Adding rigid body physics properties (mass) to the USD</em></p>
@@ -109,8 +109,8 @@ isaacsim.python.sh make_collider.py --usd_path /path/to/Aligned_obj.usd
 The collider uses convex decomposition to tightly wrap the object for accurate collision detection.
 
 <p align="center">
-  <a href="../public/usd_add_collider.jpg" target="_blank">
-    <img src="../public/usd_add_collider.jpg" alt="Add Collider Properties" style="width: 100%; cursor: zoom-in;">
+  <a href="/usd_add_collider.jpg" target="_blank">
+    <img src="/usd_add_collider.jpg" alt="Add Collider Properties" style="width: 100%; cursor: zoom-in;">
   </a>
 </p>
 <p align="center"><em>Adding collision mesh and friction properties</em></p>
@@ -147,8 +147,8 @@ python gen_sparse_label.py --obj_path /path/to/Aligned_obj.obj --unit m
 For detailed instructions, refer to the [README.md](https://github.com/InternRobotics/InternDataEngine/blob/master/workflows/simbox/tools/grasp/README.md) in the grasp tools directory.
 
 <p align="center">
-  <a href="../public/grasp_banana.jpg" target="_blank">
-    <img src="../public/grasp_banana.jpg" alt="Grasp Pose Visualization" style="width: 100%; cursor: zoom-in;">
+  <a href="/grasp_banana.jpg" target="_blank">
+    <img src="/grasp_banana.jpg" alt="Grasp Pose Visualization" style="width: 100%; cursor: zoom-in;">
   </a>
 </p>
 <p align="center"><em>Visualization of generated grasp poses on a banana object</em></p>
@@ -198,8 +198,8 @@ The asset should have stable physical properties:
 The initial hierarchy structure should look like this:
 
 <p align="center">
-  <a href="../public/pre_rehier.jpg" target="_blank">
-    <img src="../public/pre_rehier.jpg" alt="Initial USD Hierarchy" style="width: 100%; cursor: zoom-in;">
+  <a href="/pre_rehier.jpg" target="_blank">
+    <img src="/pre_rehier.jpg" alt="Initial USD Hierarchy" style="width: 100%; cursor: zoom-in;">
   </a>
 </p>
 <p align="center"><em>Initial USD hierarchy structure - root positioned at articulation root</em></p>
@@ -267,8 +267,8 @@ python rehier.py --config $CONFIG_PATH
 This step reorganizes the asset hierarchy to a unified standard. After rehier, the structure should look like:
 
 <p align="center">
-  <a href="../public/after_rehier.jpg" target="_blank">
-    <img src="../public/after_rehier.jpg" alt="Rehiered USD Hierarchy" style="width: 100%; cursor: zoom-in;">
+  <a href="/after_rehier.jpg" target="_blank">
+    <img src="/after_rehier.jpg" alt="Rehiered USD Hierarchy" style="width: 100%; cursor: zoom-in;">
   </a>
 </p>
 <p align="center"><em>Restructured USD hierarchy - instance prim inserted between original asset and root as articulation root</em></p>

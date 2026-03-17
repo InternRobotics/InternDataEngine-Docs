@@ -11,7 +11,7 @@ Workflows are the interfaces designed by the engine to manipulate the synthetic 
 
 The framework of the engine is shown in the figure:
 
-![Engine Architecture Chart](../../public/nimbus_archi.png)
+![Engine Architecture Chart](/nimbus_archi.png)
 
 Above the optimization layer, the engine provides designs related to the Stage Runner Layer and the Components Layer.
 

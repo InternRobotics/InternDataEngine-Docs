@@ -161,29 +161,29 @@ Common choices:
 Figure Examples:
 
 <p align="center">
-  <a href="../public/ee_genie1.jpg" target="_blank">
-    <img src="../public/ee_genie1.jpg" alt="Genie-1 EE Path" style="width: 100%; cursor: zoom-in;">
+  <a href="/ee_genie1.jpg" target="_blank">
+    <img src="/ee_genie1.jpg" alt="Genie-1 EE Path" style="width: 100%; cursor: zoom-in;">
   </a>
 </p>
 <p align="center"><em>Genie-1: EE link is the last gripper link (fixed EE-to-TCP transform)</em></p>
 
 <p align="center">
-  <a href="../public/ee_lift2.jpg" target="_blank">
-    <img src="../public/ee_lift2.jpg" alt="Lift-2 EE Path" style="width: 100%; cursor: zoom-in;">
+  <a href="/ee_lift2.jpg" target="_blank">
+    <img src="/ee_lift2.jpg" alt="Lift-2 EE Path" style="width: 100%; cursor: zoom-in;">
   </a>
 </p>
 <p align="center"><em>Lift-2: EE link is a gripper link (fixed EE-to-TCP transform)</em></p>
 
 <p align="center">
-  <a href="../public/ee_robotiq.jpg" target="_blank">
-    <img src="../public/ee_robotiq.jpg" alt="Robotiq EE Path" style="width: 100%; cursor: zoom-in;">
+  <a href="/ee_robotiq.jpg" target="_blank">
+    <img src="/ee_robotiq.jpg" alt="Robotiq EE Path" style="width: 100%; cursor: zoom-in;">
   </a>
 </p>
 <p align="center"><em>Robotiq: EE link is the last gripper link (fixed EE-to-TCP transform)</em></p>
 
 <p align="center">
-  <a href="../public/ee_panda.jpg" target="_blank">
-    <img src="../public/ee_panda.jpg" alt="Panda EE Path" style="width: 100%; cursor: zoom-in;">
+  <a href="/ee_panda.jpg" target="_blank">
+    <img src="/ee_panda.jpg" alt="Panda EE Path" style="width: 100%; cursor: zoom-in;">
   </a>
 </p>
 <p align="center"><em>Panda: EE link is a gripper link (fixed EE-to-TCP transform)</em></p>

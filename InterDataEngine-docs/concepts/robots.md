@@ -23,22 +23,22 @@ InternDataEngine supports multiple robot platforms for manipulation tasks. Each 
 <summary>FR3 (Single-arm, Franka Panda Gripper)</summary>
 
 <p align="center">
-  <a href="../public/franka/ee_head_vis.png" target="_blank">
-    <img src="../public/franka/ee_head_vis.png" alt="FR3 EE Head" style="width: 100%; cursor: zoom-in;">
+  <a href="/franka/ee_head_vis.png" target="_blank">
+    <img src="/franka/ee_head_vis.png" alt="FR3 EE Head" style="width: 100%; cursor: zoom-in;">
   </a>
 </p>
 <p align="center"><em>FR3 end-effector head frame visualization</em></p>
 
 <p align="center">
-  <a href="../public/franka/tcp_head_vis.png" target="_blank">
-    <img src="../public/franka/tcp_head_vis.png" alt="FR3 TCP Head" style="width: 100%; cursor: zoom-in;">
+  <a href="/franka/tcp_head_vis.png" target="_blank">
+    <img src="/franka/tcp_head_vis.png" alt="FR3 TCP Head" style="width: 100%; cursor: zoom-in;">
   </a>
 </p>
 <p align="center"><em>FR3 TCP (Tool Center Point) head frame visualization</em></p>
 
 <p align="center">
-  <a href="../public/franka/tcp_hand_vis.png" target="_blank">
-    <img src="../public/franka/tcp_hand_vis.png" alt="FR3 TCP Hand" style="width: 100%; cursor: zoom-in;">
+  <a href="/franka/tcp_hand_vis.png" target="_blank">
+    <img src="/franka/tcp_hand_vis.png" alt="FR3 TCP Hand" style="width: 100%; cursor: zoom-in;">
   </a>
 </p>
 <p align="center"><em>FR3 TCP hand frame visualization</em></p>
@@ -49,22 +49,22 @@ InternDataEngine supports multiple robot platforms for manipulation tasks. Each 
 <summary>Franka Robotiq85 (Single-arm, Robotiq 2F-85 Gripper)</summary>
 
 <p align="center">
-  <a href="../public/frankarobotiq/ee_head_vis.png" target="_blank">
-    <img src="../public/frankarobotiq/ee_head_vis.png" alt="Franka Robotiq85 EE Head" style="width: 100%; cursor: zoom-in;">
+  <a href="/frankarobotiq/ee_head_vis.png" target="_blank">
+    <img src="/frankarobotiq/ee_head_vis.png" alt="Franka Robotiq85 EE Head" style="width: 100%; cursor: zoom-in;">
   </a>
 </p>
 <p align="center"><em>Franka Robotiq85 end-effector head frame visualization</em></p>
 
 <p align="center">
-  <a href="../public/frankarobotiq/tcp_head_vis.png" target="_blank">
-    <img src="../public/frankarobotiq/tcp_head_vis.png" alt="Franka Robotiq85 TCP Head" style="width: 100%; cursor: zoom-in;">
+  <a href="/frankarobotiq/tcp_head_vis.png" target="_blank">
+    <img src="/frankarobotiq/tcp_head_vis.png" alt="Franka Robotiq85 TCP Head" style="width: 100%; cursor: zoom-in;">
   </a>
 </p>
 <p align="center"><em>Franka Robotiq85 TCP (Tool Center Point) head frame visualization</em></p>
 
 <p align="center">
-  <a href="../public/frankarobotiq/tcp_hand_vis.png" target="_blank">
-    <img src="../public/frankarobotiq/tcp_hand_vis.png" alt="Franka Robotiq85 TCP Hand" style="width: 100%; cursor: zoom-in;">
+  <a href="/frankarobotiq/tcp_hand_vis.png" target="_blank">
+    <img src="/frankarobotiq/tcp_hand_vis.png" alt="Franka Robotiq85 TCP Hand" style="width: 100%; cursor: zoom-in;">
   </a>
 </p>
 <p align="center"><em>Franka Robotiq85 TCP hand frame visualization</em></p>
@@ -75,43 +75,43 @@ InternDataEngine supports multiple robot platforms for manipulation tasks. Each 
 <summary>Genie-1 (Dual-arm, G1-120s)</summary>
 
 <p align="center">
-  <a href="../public/genie1/leftee_head_left_vis.png" target="_blank">
-    <img src="../public/genie1/leftee_head_left_vis.png" alt="Genie-1 Left EE Head" style="width: 100%; cursor: zoom-in;">
+  <a href="/genie1/leftee_head_left_vis.png" target="_blank">
+    <img src="/genie1/leftee_head_left_vis.png" alt="Genie-1 Left EE Head" style="width: 100%; cursor: zoom-in;">
   </a>
 </p>
 <p align="center"><em>Genie-1 left arm end-effector head frame visualization</em></p>
 
 <p align="center">
-  <a href="../public/genie1/lefttcp_head_vis.png" target="_blank">
-    <img src="../public/genie1/lefttcp_head_vis.png" alt="Genie-1 Left TCP Head" style="width: 100%; cursor: zoom-in;">
+  <a href="/genie1/lefttcp_head_vis.png" target="_blank">
+    <img src="/genie1/lefttcp_head_vis.png" alt="Genie-1 Left TCP Head" style="width: 100%; cursor: zoom-in;">
   </a>
 </p>
 <p align="center"><em>Genie-1 left arm TCP head frame visualization</em></p>
 
 <p align="center">
-  <a href="../public/genie1/lefttcp_hand_left_vis.png" target="_blank">
-    <img src="../public/genie1/lefttcp_hand_left_vis.png" alt="Genie-1 Left TCP Hand" style="width: 100%; cursor: zoom-in;">
+  <a href="/genie1/lefttcp_hand_left_vis.png" target="_blank">
+    <img src="/genie1/lefttcp_hand_left_vis.png" alt="Genie-1 Left TCP Hand" style="width: 100%; cursor: zoom-in;">
   </a>
 </p>
 <p align="center"><em>Genie-1 left arm TCP hand frame visualization</em></p>
 
 <p align="center">
-  <a href="../public/genie1/rightee_head_vis.png" target="_blank">
-    <img src="../public/genie1/rightee_head_vis.png" alt="Genie-1 Right EE Head" style="width: 100%; cursor: zoom-in;">
+  <a href="/genie1/rightee_head_vis.png" target="_blank">
+    <img src="/genie1/rightee_head_vis.png" alt="Genie-1 Right EE Head" style="width: 100%; cursor: zoom-in;">
   </a>
 </p>
 <p align="center"><em>Genie-1 right arm end-effector head frame visualization</em></p>
 
 <p align="center">
-  <a href="../public/genie1/righttcp_head_vis.png" target="_blank">
-    <img src="../public/genie1/righttcp_head_vis.png" alt="Genie-1 Right TCP Head" style="width: 100%; cursor: zoom-in;">
+  <a href="/genie1/righttcp_head_vis.png" target="_blank">
+    <img src="/genie1/righttcp_head_vis.png" alt="Genie-1 Right TCP Head" style="width: 100%; cursor: zoom-in;">
   </a>
 </p>
 <p align="center"><em>Genie-1 right arm TCP head frame visualization</em></p>
 
 <p align="center">
-  <a href="../public/genie1/righttcp_hand_right_vis.png" target="_blank">
-    <img src="../public/genie1/righttcp_hand_right_vis.png" alt="Genie-1 Right TCP Hand" style="width: 100%; cursor: zoom-in;">
+  <a href="/genie1/righttcp_hand_right_vis.png" target="_blank">
+    <img src="/genie1/righttcp_hand_right_vis.png" alt="Genie-1 Right TCP Hand" style="width: 100%; cursor: zoom-in;">
   </a>
 </p>
 <p align="center"><em>Genie-1 right arm TCP hand frame visualization</em></p>
@@ -122,43 +122,43 @@ InternDataEngine supports multiple robot platforms for manipulation tasks. Each 
 <summary>ARX Lift-2 (Dual-arm, R5a)</summary>
 
 <p align="center">
-  <a href="../public/lift2/leftee_head_left_vis.jpeg" target="_blank">
-    <img src="../public/lift2/leftee_head_left_vis.jpeg" alt="Lift-2 Left EE Head" style="width: 100%; cursor: zoom-in;">
+  <a href="/lift2/leftee_head_left_vis.jpeg" target="_blank">
+    <img src="/lift2/leftee_head_left_vis.jpeg" alt="Lift-2 Left EE Head" style="width: 100%; cursor: zoom-in;">
   </a>
 </p>
 <p align="center"><em>Lift-2 left arm end-effector head frame visualization</em></p>
 
 <p align="center">
-  <a href="../public/lift2/lefttcp_head_vis.jpeg" target="_blank">
-    <img src="../public/lift2/lefttcp_head_vis.jpeg" alt="Lift-2 Left TCP Head" style="width: 100%; cursor: zoom-in;">
+  <a href="/lift2/lefttcp_head_vis.jpeg" target="_blank">
+    <img src="/lift2/lefttcp_head_vis.jpeg" alt="Lift-2 Left TCP Head" style="width: 100%; cursor: zoom-in;">
   </a>
 </p>
 <p align="center"><em>Lift-2 left arm TCP head frame visualization</em></p>
 
 <p align="center">
-  <a href="../public/lift2/lefttcp_hand_left_vis.jpeg" target="_blank">
-    <img src="../public/lift2/lefttcp_hand_left_vis.jpeg" alt="Lift-2 Left TCP Hand" style="width: 100%; cursor: zoom-in;">
+  <a href="/lift2/lefttcp_hand_left_vis.jpeg" target="_blank">
+    <img src="/lift2/lefttcp_hand_left_vis.jpeg" alt="Lift-2 Left TCP Hand" style="width: 100%; cursor: zoom-in;">
   </a>
 </p>
 <p align="center"><em>Lift-2 left arm TCP hand frame visualization</em></p>
 
 <p align="center">
-  <a href="../public/lift2/rightee_head_vis.jpeg" target="_blank">
-    <img src="../public/lift2/rightee_head_vis.jpeg" alt="Lift-2 Right EE Head" style="width: 100%; cursor: zoom-in;">
+  <a href="/lift2/rightee_head_vis.jpeg" target="_blank">
+    <img src="/lift2/rightee_head_vis.jpeg" alt="Lift-2 Right EE Head" style="width: 100%; cursor: zoom-in;">
   </a>
 </p>
 <p align="center"><em>Lift-2 right arm end-effector head frame visualization</em></p>
 
 <p align="center">
-  <a href="../public/lift2/righttcp_head_vis.jpeg" target="_blank">
-    <img src="../public/lift2/righttcp_head_vis.jpeg" alt="Lift-2 Right TCP Head" style="width: 100%; cursor: zoom-in;">
+  <a href="/lift2/righttcp_head_vis.jpeg" target="_blank">
+    <img src="/lift2/righttcp_head_vis.jpeg" alt="Lift-2 Right TCP Head" style="width: 100%; cursor: zoom-in;">
   </a>
 </p>
 <p align="center"><em>Lift-2 right arm TCP head frame visualization</em></p>
 
 <p align="center">
-  <a href="../public/lift2/righttcp_hand_right_vis.jpeg" target="_blank">
-    <img src="../public/lift2/righttcp_hand_right_vis.jpeg" alt="Lift-2 Right TCP Hand" style="width: 100%; cursor: zoom-in;">
+  <a href="/lift2/righttcp_hand_right_vis.jpeg" target="_blank">
+    <img src="/lift2/righttcp_hand_right_vis.jpeg" alt="Lift-2 Right TCP Hand" style="width: 100%; cursor: zoom-in;">
   </a>
 </p>
 <p align="center"><em>Lift-2 right arm TCP hand frame visualization</em></p>
@@ -169,22 +169,22 @@ InternDataEngine supports multiple robot platforms for manipulation tasks. Each 
 <summary>Agilex Split Aloha (Dual-arm, Piper-100)</summary>
 
 <p align="center">
-  <a href="../public/split_aloha/rightee_head_vis.png" target="_blank">
-    <img src="../public/split_aloha/rightee_head_vis.png" alt="Split Aloha Right EE Head" style="width: 100%; cursor: zoom-in;">
+  <a href="/split_aloha/rightee_head_vis.png" target="_blank">
+    <img src="/split_aloha/rightee_head_vis.png" alt="Split Aloha Right EE Head" style="width: 100%; cursor: zoom-in;">
   </a>
 </p>
 <p align="center"><em>Split Aloha right arm end-effector head frame visualization</em></p>
 
 <p align="center">
-  <a href="../public/split_aloha/righttcp_head_vis.png" target="_blank">
-    <img src="../public/split_aloha/righttcp_head_vis.png" alt="Split Aloha Right TCP Head" style="width: 100%; cursor: zoom-in;">
+  <a href="/split_aloha/righttcp_head_vis.png" target="_blank">
+    <img src="/split_aloha/righttcp_head_vis.png" alt="Split Aloha Right TCP Head" style="width: 100%; cursor: zoom-in;">
   </a>
 </p>
 <p align="center"><em>Split Aloha right arm TCP head frame visualization</em></p>
 
 <p align="center">
-  <a href="../public/split_aloha/righttcp_hand_right_vis.png" target="_blank">
-    <img src="../public/split_aloha/righttcp_hand_right_vis.png" alt="Split Aloha Right TCP Hand" style="width: 100%; cursor: zoom-in;">
+  <a href="/split_aloha/righttcp_hand_right_vis.png" target="_blank">
+    <img src="/split_aloha/righttcp_hand_right_vis.png" alt="Split Aloha Right TCP Hand" style="width: 100%; cursor: zoom-in;">
   </a>
 </p>
 <p align="center"><em>Split Aloha right arm TCP hand frame visualization</em></p>
@@ -306,8 +306,8 @@ Some fields require detailed explanation due to their importance in grasp pose p
 A 3×3 rotation matrix that transforms the grasp pose orientation from the pre-defined graspnet frame to the robot's end-effector frame. Our generated grasp pose follows the frame definition from GraspNet.
 
 <p align="center">
-  <a href="../public/graspnet_def.png" target="_blank">
-    <img src="../public/graspnet_def.png" alt="GraspNet Gripper Frame Definition" style="width: 400px; cursor: zoom-in;">
+  <a href="/graspnet_def.png" target="_blank">
+    <img src="/graspnet_def.png" alt="GraspNet Gripper Frame Definition" style="width: 400px; cursor: zoom-in;">
   </a>
 </p>
 <p align="center"><em>GraspNet gripper frame definition (source: graspnetAPI)</em></p>
@@ -417,8 +417,8 @@ Assume the gripper is oriented upright facing the user. The keypoints are define
 - **`tool_side`**: A point on the side of the right fingertip, used to indicate the gripper width.
 
 <p align="center">
-  <a href="../public/gripper_kps.jpg" target="_blank">
-    <img src="../public/gripper_kps.jpg" alt="Gripper Keypoints Visualization" style="width: 100%; cursor: zoom-in;">
+  <a href="/gripper_kps.jpg" target="_blank">
+    <img src="/gripper_kps.jpg" alt="Gripper Keypoints Visualization" style="width: 100%; cursor: zoom-in;">
   </a>
 </p>
 <p align="center"><em>Gripper keypoints visualization showing tool_head, tool_tail, and tool_side</em></p>
