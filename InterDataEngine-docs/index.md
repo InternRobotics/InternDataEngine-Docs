@@ -5,7 +5,7 @@ hero:
   name: "InternDataEngine"
   tagline: Pioneering High-Fidelity Synthetic Data Generator for Robotic Manipulation
   image:
-    src: public/logo.png
+    src: /logo.png
     alt: InternDataEngine
   actions:
     - theme: brand
