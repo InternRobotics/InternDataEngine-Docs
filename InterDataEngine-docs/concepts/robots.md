@@ -289,12 +289,10 @@ lift_home: [0.46]                          # Lift joint default position (meters
 
 ### Task-Level Fields
 
-| Field | Description |
-|-------|-------------|
-| `name` | Robot identifier used in skills and cameras |
-| `robot_config_file` | Path to robot-specific YAML configuration file |
-| `euler` | Initial robot orientation in degrees [roll, pitch, yaw] |
-| `ignore_substring` | Collision filter substrings to ignore during simulation |
+- **name** (<span class="param-type">str</span>): Robot identifier used in skills and cameras.
+- **robot_config_file** (<span class="param-type">str</span>): Path to robot-specific YAML configuration file.
+- **euler** (<span class="param-type">list</span>): Initial robot orientation in degrees [roll, pitch, yaw].
+- **ignore_substring** (<span class="param-type">list</span>): Collision filter substrings to ignore during simulation.
 
 ### Robot-Specific Fields
 
@@ -437,34 +435,32 @@ fl_gripper_keypoints:
 
 ### Other Fields
 
-| Field | Description |
-|-------|-------------|
-| `target_class` | Python class for robot wrapper (e.g., `Lift2`, `FR3`) |
-| `path` | USD file path relative to asset root |
-| `robot_file` | CuRobo kinematics config file(s) - one per arm |
-| `gripper_max_width` | Maximum gripper opening width (meters) |
-| `gripper_min_width` | Minimum gripper closing width (meters) |
-| `solver_position_iteration_count` | Physics solver position iterations |
-| `solver_velocity_iteration_count` | Physics solver velocity iterations |
-| `stabilization_threshold` | Physics stabilization threshold |
-| `left_joint_indices` | Joint indices for left arm in articulation |
-| `right_joint_indices` | Joint indices for right arm in articulation |
-| `left_gripper_indices` | Gripper joint index for left arm |
-| `right_gripper_indices` | Gripper joint index for right arm |
-| `lift_indices` | Lift joint indices (for robots with lift mechanism) |
-| `fl_base_path` | Left arm base prim path |
-| `fr_base_path` | Right arm base prim path |
-| `fl_filter_paths` | Collision filter prims' paths for left arm |
-| `fr_filter_paths` | Collision filter prims' paths for right arm |
-| `fl_forbid_collision_paths` | Forbidden collision prims' paths for left arm |
-| `fr_forbid_collision_paths` | Forbidden collision prims' paths for right arm |
-| `left_joint_home` | Default joint positions for left arm (radians) |
-| `right_joint_home` | Default joint positions for right arm (radians) |
-| `left_joint_home_std` | Standard deviation for randomizing left arm home position |
-| `right_joint_home_std` | Standard deviation for randomizing right arm home position |
-| `left_gripper_home` | Default gripper joint value for left gripper (Isaac) |
-| `right_gripper_home` | Default gripper joint value for right gripper (Isaac) |
-| `lift_home` | Default lift joint position (meters) |
+- **target_class** (<span class="param-type">str</span>): Python class for robot wrapper (e.g., `Lift2`, `FR3`).
+- **path** (<span class="param-type">str</span>): USD file path relative to asset root.
+- **robot_file** (<span class="param-type">list</span>): CuRobo kinematics config file(s) - one per arm.
+- **gripper_max_width** (<span class="param-type">float</span>): Maximum gripper opening width (meters).
+- **gripper_min_width** (<span class="param-type">float</span>): Minimum gripper closing width (meters).
+- **solver_position_iteration_count** (<span class="param-type">int</span>): Physics solver position iterations.
+- **solver_velocity_iteration_count** (<span class="param-type">int</span>): Physics solver velocity iterations.
+- **stabilization_threshold** (<span class="param-type">float</span>): Physics stabilization threshold.
+- **left_joint_indices** (<span class="param-type">list</span>): Joint indices for left arm in articulation.
+- **right_joint_indices** (<span class="param-type">list</span>): Joint indices for right arm in articulation.
+- **left_gripper_indices** (<span class="param-type">list</span>): Gripper joint index for left arm.
+- **right_gripper_indices** (<span class="param-type">list</span>): Gripper joint index for right arm.
+- **lift_indices** (<span class="param-type">list</span>): Lift joint indices (for robots with lift mechanism).
+- **fl_base_path** (<span class="param-type">str</span>): Left arm base prim path.
+- **fr_base_path** (<span class="param-type">str</span>): Right arm base prim path.
+- **fl_filter_paths** (<span class="param-type">list</span>): Collision filter prims' paths for left arm.
+- **fr_filter_paths** (<span class="param-type">list</span>): Collision filter prims' paths for right arm.
+- **fl_forbid_collision_paths** (<span class="param-type">list</span>): Forbidden collision prims' paths for left arm.
+- **fr_forbid_collision_paths** (<span class="param-type">list</span>): Forbidden collision prims' paths for right arm.
+- **left_joint_home** (<span class="param-type">list</span>): Default joint positions for left arm (radians).
+- **right_joint_home** (<span class="param-type">list</span>): Default joint positions for right arm (radians).
+- **left_joint_home_std** (<span class="param-type">list</span>): Standard deviation for randomizing left arm home position.
+- **right_joint_home_std** (<span class="param-type">list</span>): Standard deviation for randomizing right arm home position.
+- **left_gripper_home** (<span class="param-type">list</span>): Default gripper joint value for left gripper (Isaac).
+- **right_gripper_home** (<span class="param-type">list</span>): Default gripper joint value for right gripper (Isaac).
+- **lift_home** (<span class="param-type">list</span>): Default lift joint position (meters).
 
 
 ## Robot Wrappers

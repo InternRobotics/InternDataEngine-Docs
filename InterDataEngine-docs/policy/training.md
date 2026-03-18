@@ -21,13 +21,11 @@ Use the conversion scripts in [`policy/lmdb2lerobotv21`](https://github.com/Inte
 
 We provide conversion scripts for different robot platforms:
 
-| Script | Robot Platform |
-|--------|----------------|
-| `lmdb2lerobot_lift2_a1.py` | Lift2 (ARX) |
-| `lmdb2lerobot_split_aloha_a1.py` | Split Aloha |
-| `lmdb2lerobot_genie1_a1.py` | Genie1 |
-| `lmdb2lerobot_franka_a1.py` | Franka FR3 |
-| `lmdb2lerobot_frankarobotiq_a1.py` | Franka with Robotiq gripper |
+- **lmdb2lerobot_lift2_a1.py** (<span class="param-type">script</span>): Lift2 (ARX).
+- **lmdb2lerobot_split_aloha_a1.py** (<span class="param-type">script</span>): Split Aloha.
+- **lmdb2lerobot_genie1_a1.py** (<span class="param-type">script</span>): Genie1.
+- **lmdb2lerobot_franka_a1.py** (<span class="param-type">script</span>): Franka FR3.
+- **lmdb2lerobot_frankarobotiq_a1.py** (<span class="param-type">script</span>): Franka with Robotiq gripper.
 
 Example usage:
 
@@ -42,13 +40,11 @@ python lmdb2lerobot_lift2_a1.py \
 
 **Parameters:**
 
-| Parameter | Description |
-|-----------|-------------|
-| `--src_path` | Path to the source LMDB data directory |
-| `--save_path` | Path to save the converted LeRobot dataset |
-| `--repo_id` | Dataset repository identifier |
-| `--num-threads` | Number of threads for parallel processing |
-| `--num_demos` | Number of demonstrations to convert (optional) |
+- **--src_path** (<span class="param-type">str</span>): Path to the source LMDB data directory.
+- **--save_path** (<span class="param-type">str</span>): Path to save the converted LeRobot dataset.
+- **--repo_id** (<span class="param-type">str</span>): Dataset repository identifier.
+- **--num-threads** (<span class="param-type">int</span>): Number of threads for parallel processing.
+- **--num_demos** (<span class="param-type">int</span>): Number of demonstrations to convert (optional).
 
 ### Step 3: Convert to LeRobot v3.0 (Optional)
 

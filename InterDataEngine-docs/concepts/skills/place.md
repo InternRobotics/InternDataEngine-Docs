@@ -7,6 +7,7 @@ description: Place objects at target locations with constrained orientations
 
 The `Place` skill performs placement operations with constrained end-effector orientations. It generates valid place poses through random sampling and filtering, then executes the placement motion.
 
+Code Example:
 ```python
 # Source workflows/simbox/core/skills/place.py
 from copy import deepcopy
@@ -239,7 +240,7 @@ Generate pre-place and place poses based on placement direction mode.
 
 <p class="method-section">Returns:</p>
 
-- <span class="param-type">list</span>: `[pre_place_pose, place_pose]` or `[pre_place_pose, place_pose, post_place_pose]`
+- <span class="param-type">list</span>: `[T_base_ee_preplace, T_base_ee_place]` or `[T_base_ee_preplace, T_base_ee_place, T_base_ee_postplace]`
 
 <p class="method-section">Position Constraint Modes:</p>
 
@@ -358,24 +359,20 @@ The place skill uses the same **direction-based filtering strategy** as the pick
 
 ### Filter Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `filter_x_dir` | Filter based on EE's X-axis direction in arm base frame |
-| `filter_y_dir` | Filter based on EE's Y-axis direction in arm base frame |
-| `filter_z_dir` | Filter based on EE's Z-axis direction in arm base frame |
+- **filter_x_dir** (<span class="param-type">list</span>): Filter based on EE's X-axis direction in arm base frame.
+- **filter_y_dir** (<span class="param-type">list</span>): Filter based on EE's Y-axis direction in arm base frame.
+- **filter_z_dir** (<span class="param-type">list</span>): Filter based on EE's Z-axis direction in arm base frame.
 
 **Format**: `[direction, angle]` or `[direction, angle_min, angle_max]`
 
 ### Direction Mapping
 
-| Direction | Condition |
-|-----------|-----------|
-| `forward` | EE axis dot arm_base_X ≥ cos(angle) |
-| `backward` | EE axis dot arm_base_X ≤ cos(angle) |
-| `leftward` | EE axis dot arm_base_Y ≥ cos(angle) |
-| `rightward` | EE axis dot arm_base_Y ≤ cos(angle) |
-| `upward` | EE axis dot arm_base_Z ≥ cos(angle) |
-| `downward` | EE axis dot arm_base_Z ≤ cos(angle) |
+- **forward**: EE axis dot arm_base_X ≥ cos(angle)
+- **backward**: EE axis dot arm_base_X ≤ cos(angle)
+- **leftward**: EE axis dot arm_base_Y ≥ cos(angle)
+- **rightward**: EE axis dot arm_base_Y ≤ cos(angle)
+- **upward**: EE axis dot arm_base_Z ≥ cos(angle)
+- **downward**: EE axis dot arm_base_Z ≤ cos(angle)
 
 ### Object Alignment Constraint
 
@@ -408,43 +405,41 @@ This ensures that a specific axis on the held object (e.g., bottle height) align
 
 ## Configuration Reference
 
-| Parameter | Type | Default | Description |
-|-----------|------|---------|-------------|
-| `objects` | `list` | required | `[pick_object, place_container]` |
-| `place_part_prim_path` | `string` | `None` | Sub-path within place container prim |
-| `place_direction` | `string` | `"vertical"` | `"vertical"` or `"horizontal"` |
-| `position_constraint` | `string` | `"gripper"` | `"gripper"` or `"object"` |
-| `pre_place_z_offset` | `float` | `0.2` | Approach height above container |
-| `place_z_offset` | `float` | `0.1` | Final placement height |
-| `x_ratio_range` | `[float, float]` | `[0.4, 0.6]` | X-position sampling range |
-| `y_ratio_range` | `[float, float]` | `[0.4, 0.6]` | Y-position sampling range |
-| `z_ratio_range` | `[float, float]` | `[0.4, 0.6]` | Z-position sampling range (horizontal) |
-| `align_place_obj_axis` | `[float, float, float]` | `None` | Insertion axis on place container (horizontal) |
-| `offset_place_obj_axis` | `[float, float, float]` | `None` | Offset axis on place container (horizontal) |
-| `pre_place_align` | `float` | `0.2` | Pre-place offset along alignment axis |
-| `pre_place_offset` | `float` | `0.2` | Pre-place offset along offset axis |
-| `place_align` | `float` | `0.1` | Place offset along alignment axis |
-| `place_offset` | `float` | `0.1` | Place offset along offset axis |
-| `filter_x_dir` | `list` | `None` | EE X-axis direction filter |
-| `filter_y_dir` | `list` | `None` | EE Y-axis direction filter |
-| `filter_z_dir` | `list` | `None` | EE Z-axis direction filter |
-| `align_pick_obj_axis` | `[float, float, float]` | `None` | Axis on pick object to align |
-| `align_place_obj_axis` | `[float, float, float]` | `None` | Target axis on place container |
-| `align_obj_tol` | `float` | `None` | Alignment tolerance (degrees) |
-| `align_plane_x_axis` | `[float, float, float]` | `None` | X-axis alignment plane |
-| `align_plane_y_axis` | `[float, float, float]` | `None` | Y-axis alignment plane |
-| `pre_place_hold_vec_weight` | `list` | `None` | Hold vector weight at pre-place |
-| `post_place_hold_vec_weight` | `list` | `None` | Hold vector weight at place |
-| `gripper_change_steps` | `int` | `10` | Steps for gripper open action |
-| `hesitate_steps` | `int` | `0` | Pause steps before release |
-| `post_place_vector` | `[float, float, float]` | `None` | Retreat direction after placement |
-| `ignore_substring` | `list` | `[]` | Collision filter substrings |
-| `test_mode` | `string` | `"forward"` | Motion test mode: `"forward"` or `"ik"` |
-| `t_eps` | `float` | `1e-3` | Translation tolerance (meters) |
-| `o_eps` | `float` | `5e-3` | Orientation tolerance (radians) |
-| `success_mode` | `string` | `"3diou"` | Success evaluation mode |
-| `success_th` | `float` | `0.0` | IoU threshold for success |
-| `threshold` | `float` | `0.03` | Distance threshold for left/right modes |
+- **objects** (<span class="param-type">list</span>, default: required): `[pick_object, place_container]`.
+- **place_part_prim_path** (<span class="param-type">string</span>, default: `None`): Sub-path within place container prim.
+- **place_direction** (<span class="param-type">string</span>, default: `"vertical"`): `"vertical"` or `"horizontal"`.
+- **position_constraint** (<span class="param-type">string</span>, default: `"gripper"`): `"gripper"` or `"object"`.
+- **pre_place_z_offset** (<span class="param-type">float</span>, default: `0.2`): Approach height above container.
+- **place_z_offset** (<span class="param-type">float</span>, default: `0.1`): Final placement height.
+- **x_ratio_range** (<span class="param-type">[float, float]</span>, default: `[0.4, 0.6]`): X-position sampling range.
+- **y_ratio_range** (<span class="param-type">[float, float]</span>, default: `[0.4, 0.6]`): Y-position sampling range.
+- **z_ratio_range** (<span class="param-type">[float, float]</span>, default: `[0.4, 0.6]`): Z-position sampling range (horizontal).
+- **align_place_obj_axis** (<span class="param-type">[float, float, float]</span>, default: `None`): Insertion axis on place container (horizontal).
+- **offset_place_obj_axis** (<span class="param-type">[float, float, float]</span>, default: `None`): Offset axis on place container (horizontal).
+- **pre_place_align** (<span class="param-type">float</span>, default: `0.2`): Pre-place offset along alignment axis.
+- **pre_place_offset** (<span class="param-type">float</span>, default: `0.2`): Pre-place offset along offset axis.
+- **place_align** (<span class="param-type">float</span>, default: `0.1`): Place offset along alignment axis.
+- **place_offset** (<span class="param-type">float</span>, default: `0.1`): Place offset along offset axis.
+- **filter_x_dir** (<span class="param-type">list</span>, default: `None`): EE X-axis direction filter.
+- **filter_y_dir** (<span class="param-type">list</span>, default: `None`): EE Y-axis direction filter.
+- **filter_z_dir** (<span class="param-type">list</span>, default: `None`): EE Z-axis direction filter.
+- **align_pick_obj_axis** (<span class="param-type">[float, float, float]</span>, default: `None`): Axis on pick object to align.
+- **align_place_obj_axis** (<span class="param-type">[float, float, float]</span>, default: `None`): Target axis on place container.
+- **align_obj_tol** (<span class="param-type">float</span>, default: `None`): Alignment tolerance (degrees).
+- **align_plane_x_axis** (<span class="param-type">[float, float, float]</span>, default: `None`): X-axis alignment plane.
+- **align_plane_y_axis** (<span class="param-type">[float, float, float]</span>, default: `None`): Y-axis alignment plane.
+- **pre_place_hold_vec_weight** (<span class="param-type">list</span>, default: `None`): Hold vector weight at pre-place.
+- **post_place_hold_vec_weight** (<span class="param-type">list</span>, default: `None`): Hold vector weight at place.
+- **gripper_change_steps** (<span class="param-type">int</span>, default: `10`): Steps for gripper open action.
+- **hesitate_steps** (<span class="param-type">int</span>, default: `0`): Pause steps before release.
+- **post_place_vector** (<span class="param-type">[float, float, float]</span>, default: `None`): Retreat direction after placement.
+- **ignore_substring** (<span class="param-type">list</span>, default: `[]`): Collision filter substrings.
+- **test_mode** (<span class="param-type">string</span>, default: `"forward"`): Motion test mode: `"forward"` or `"ik"`.
+- **t_eps** (<span class="param-type">float</span>, default: `1e-3`): Translation tolerance (meters).
+- **o_eps** (<span class="param-type">float</span>, default: `5e-3`): Orientation tolerance (radians).
+- **success_mode** (<span class="param-type">string</span>, default: `"3diou"`): Success evaluation mode.
+- **success_th** (<span class="param-type">float</span>, default: `0.0`): IoU threshold for success.
+- **threshold** (<span class="param-type">float</span>, default: `0.03`): Distance threshold for left/right modes.
 
 ## Example Configuration
 

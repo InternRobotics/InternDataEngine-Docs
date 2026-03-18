@@ -79,14 +79,12 @@ cx, cy = principal point (pixels)
 
 ### Sensor Settings
 
-| Parameter | Description | Typical Value |
-|-----------|-------------|---------------|
-| `resolution_width` | Image width in pixels | 640 - 1920 |
-| `resolution_height` | Image height in pixels | 480 - 1080 |
-| `pixel_size` | Physical pixel size (μm) | 1.4 - 3.0 |
-| `f_number` | Lens aperture | 1.8 - 4.0 |
-| `focus_distance` | Focus distance (m) | 0.3 - 1.0 |
-| `frequency` | Capture frequency (Hz) | 15 - 60 |
+- **resolution_width** (<span class="param-type">int</span>): Image width in pixels. Typical value: 640 - 1920.
+- **resolution_height** (<span class="param-type">int</span>): Image height in pixels. Typical value: 480 - 1080.
+- **pixel_size** (<span class="param-type">float</span>): Physical pixel size (μm). Typical value: 1.4 - 3.0.
+- **f_number** (<span class="param-type">float</span>): Lens aperture. Typical value: 1.8 - 4.0.
+- **focus_distance** (<span class="param-type">float</span>): Focus distance (m). Typical value: 0.3 - 1.0.
+- **frequency** (<span class="param-type">int</span>): Capture frequency (Hz). Typical value: 15 - 60.
 
 ## Camera Mounting
 
@@ -125,11 +123,9 @@ cameras:
 
 `CustomCamera.get_observations()` returns:
 
-| Output | Shape | Description |
-|--------|-------|-------------|
-| `color_image` | H×W×3 | RGB image (float32) |
-| `camera2env_pose` | 4×4 | Camera to environment transform |
-| `camera_params` | 3×3 | Intrinsic matrix K |
+- **color_image** (<span class="param-type">ndarray</span>): RGB image with shape H×W×3 (float32).
+- **camera2env_pose** (<span class="param-type">ndarray</span>): Camera to environment transform matrix with shape 4×4.
+- **camera_params** (<span class="param-type">ndarray</span>): Intrinsic matrix K with shape 3×3.
 
 ## Key Files
 

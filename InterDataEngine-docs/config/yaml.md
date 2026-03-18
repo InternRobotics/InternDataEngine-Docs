@@ -24,13 +24,13 @@ simulator:
   anti_aliasing: 0                   # Anti-aliasing level
 ```
 
-| Field | Description |
-|-------|-------------|
-| `physics_dt` | Physics simulation time step (in seconds). |
-| `rendering_dt` | Rendering time step (in seconds). |
-| `stage_units_in_meters` | Unit scale used for the USD stage. |
-| `headless` | Run without GUI; set to `False` for visual debugging. |
-| `anti_aliasing` | Anti-aliasing level (0 = disabled). |
+### World Settings
+
+- **physics_dt** (<span class="param-type">float</span>): Physics simulation time step (in seconds).
+- **rendering_dt** (<span class="param-type">float</span>): Rendering time step (in seconds).
+- **stage_units_in_meters** (<span class="param-type">float</span>): Unit scale used for the USD stage.
+- **headless** (<span class="param-type">bool</span>): Run without GUI; set to `False` for visual debugging.
+- **anti_aliasing** (<span class="param-type">int</span>): Anti-aliasing level (0 = disabled).
 
 ## Task Basic Configuration
 
@@ -50,15 +50,15 @@ tasks:
     neglect_collision_names: ["table"]  # Collision filter names
 ```
 
-| Field | Description |
-|-------|-------------|
-| `name` | Unique task identifier |
-| `asset_root` | Root directory for all USD assets |
-| `task` | Python class that implements task logic |
-| `task_id` | Instance ID for multi-task scenarios |
-| `offset` | Optional world offset [x, y, z] |
-| `render` | Enable/disable visual rendering |
-| `neglect_collision_names` | Object names to exclude from gripper collision checking |
+### Task Basic Configuration
+
+- **name** (<span class="param-type">str</span>): Unique task identifier.
+- **asset_root** (<span class="param-type">str</span>): Root directory for all USD assets.
+- **task** (<span class="param-type">str</span>): Python class that implements task logic.
+- **task_id** (<span class="param-type">int</span>): Instance ID for multi-task scenarios.
+- **offset** (<span class="param-type">list</span>): Optional world offset [x, y, z].
+- **render** (<span class="param-type">bool</span>): Enable/disable visual rendering.
+- **neglect_collision_names** (<span class="param-type">list</span>): Object names to exclude from gripper collision checking.
 
 ## Arena
 
@@ -107,12 +107,12 @@ robots:
     ignore_substring: ["material", "table", "gso_box"]
 ```
 
-| Field | Description |
-|-------|-------------|
-| `name` | Robot identifier (must match skill definitions) |
-| `robot_config_file` | Path to robot config file, relative to asset_root |
-| `euler` | Initial rotation [roll, pitch, yaw] in degrees, in world frame |
-| `ignore_substring` | Substrings for collision filtering; objects with matching name prefixes are excluded from CuRobo collision checking |
+### Robots
+
+- **name** (<span class="param-type">str</span>): Robot identifier (must match skill definitions).
+- **robot_config_file** (<span class="param-type">str</span>): Path to robot config file, relative to asset_root.
+- **euler** (<span class="param-type">list</span>): Initial rotation [roll, pitch, yaw] in degrees, in world frame.
+- **ignore_substring** (<span class="param-type">list</span>): Substrings for collision filtering; objects with matching name prefixes are excluded from CuRobo collision checking.
 
 For detailed robot configuration, see [Robots](/concepts/robots).
 
@@ -136,19 +136,19 @@ objects:
     orientation_mode: random
 ```
 
-| Field | Description |
-|-------|-------------|
-| `name` | Unique object identifier (must match skill definitions) |
-| `path` | USD file path relative to asset_root |
-| `target_class` | Object type: `RigidObject`, `GeometryObject`, `ArticulatedObject`, `XFormObject`, `ConveyorObject` |
-| `dataset` | Source dataset (e.g., `oo3d`, `gso`) |
-| `category` | Object category for grasp detection |
-| `prim_path_child` | USD sub-prim name (default: `Aligned`). This prim contains the target mesh for collision and grasping. |
-| `translation` | Initial position [x, y, z] in world frame |
-| `euler` | Initial rotation [roll, pitch, yaw] in degrees, in world frame |
-| `scale` | Scale factors [sx, sy, sz] |
-| `apply_randomization` | Enable pose randomization within the category |
-| `orientation_mode` | Orientation constraint: `random` (pure random), `suggested` (follows category defaults), or `keep` (use `euler` values) |
+### Objects
+
+- **name** (<span class="param-type">str</span>): Unique object identifier (must match skill definitions).
+- **path** (<span class="param-type">str</span>): USD file path relative to asset_root.
+- **target_class** (<span class="param-type">str</span>): Object type: `RigidObject`, `GeometryObject`, `ArticulatedObject`, `XFormObject`, `ConveyorObject`.
+- **dataset** (<span class="param-type">str</span>): Source dataset (e.g., `oo3d`, `gso`).
+- **category** (<span class="param-type">str</span>): Object category for grasp detection.
+- **prim_path_child** (<span class="param-type">str</span>): USD sub-prim name (default: `Aligned`). This prim contains the target mesh for collision and grasping.
+- **translation** (<span class="param-type">list</span>): Initial position [x, y, z] in world frame.
+- **euler** (<span class="param-type">list</span>): Initial rotation [roll, pitch, yaw] in degrees, in world frame.
+- **scale** (<span class="param-type">list</span>): Scale factors [sx, sy, sz].
+- **apply_randomization** (<span class="param-type">bool</span>): Enable pose randomization within the category.
+- **orientation_mode** (<span class="param-type">str</span>): Orientation constraint: `random` (pure random), `suggested` (follows category defaults), or `keep` (use `euler` values).
 
 For detailed object configuration, see [Objects](/concepts/objects).
 
@@ -170,13 +170,13 @@ regions:
       yaw_rotation: [-45.0, 15.0]
 ```
 
-| Field | Description |
-|-------|-------------|
-| `object` | Name of the object to place |
-| `target` | Target surface name from arena fixtures (default: `table`) |
-| `random_type` | Sampler type for placement |
-| `pos_range` | Position range [[x_min, y_min, z_min], [x_max, y_max, z_max]] in world frame |
-| `yaw_rotation` | Yaw angle range [min, max] in degrees in world frame|
+### Regions
+
+- **object** (<span class="param-type">str</span>): Name of the object to place.
+- **target** (<span class="param-type">str</span>): Target surface name from arena fixtures (default: `table`).
+- **random_type** (<span class="param-type">str</span>): Sampler type for placement.
+- **pos_range** (<span class="param-type">list</span>): Position range [[x_min, y_min, z_min], [x_max, y_max, z_max]] in world frame.
+- **yaw_rotation** (<span class="param-type">list</span>): Yaw angle range [min, max] in degrees in world frame.
 
 ## Cameras
 
@@ -194,15 +194,15 @@ cameras:
     apply_randomization: False
 ```
 
-| Field | Description |
-|-------|-------------|
-| `name` | Camera identifier |
-| `translation` | Position offset [x, y, z] from parent link |
-| `orientation` | Rotation offset as quaternion [qx, qy, qz, qw] from parent link |
-| `camera_axes` | Coordinate convention: `usd` or `ros` |
-| `camera_file` | Path to camera parameter file |
-| `parent` | USD prim path to attach the camera to |
-| `apply_randomization` | Enable extrinsics randomization |
+### Cameras
+
+- **name** (<span class="param-type">str</span>): Camera identifier.
+- **translation** (<span class="param-type">list</span>): Position offset [x, y, z] from parent link.
+- **orientation** (<span class="param-type">list</span>): Rotation offset as quaternion [qx, qy, qz, qw] from parent link.
+- **camera_axes** (<span class="param-type">str</span>): Coordinate convention: `usd` or `ros`.
+- **camera_file** (<span class="param-type">str</span>): Path to camera parameter file.
+- **parent** (<span class="param-type">str</span>): USD prim path to attach the camera to.
+- **apply_randomization** (<span class="param-type">bool</span>): Enable extrinsics randomization.
 
 For detailed camera configuration, see [Cameras](/concepts/cameras).
 
@@ -221,15 +221,15 @@ data:
   max_episode_length: 4000
 ```
 
-| Field | Description |
-|-------|-------------|
-| `task_dir` | Output directory name |
-| `language_instruction` | Short task description |
-| `detailed_language_instruction` | Detailed instruction for training |
-| `collect_info` | Additional collection metadata |
-| `version` | Dataset version string |
-| `update` | Whether to overwrite existing data |
-| `max_episode_length` | Maximum steps per episode |
+### Data
+
+- **task_dir** (<span class="param-type">str</span>): Output directory name.
+- **language_instruction** (<span class="param-type">str</span>): Short task description.
+- **detailed_language_instruction** (<span class="param-type">str</span>): Detailed instruction for training.
+- **collect_info** (<span class="param-type">str</span>): Additional collection metadata.
+- **version** (<span class="param-type">str</span>): Dataset version string.
+- **update** (<span class="param-type">bool</span>): Whether to overwrite existing data.
+- **max_episode_length** (<span class="param-type">int</span>): Maximum steps per episode.
 
 ## Skills
 

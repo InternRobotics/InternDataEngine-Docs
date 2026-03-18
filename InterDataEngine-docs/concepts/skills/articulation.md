@@ -12,16 +12,16 @@ Articulation skills operate objects with joints, such as doors, drawers, microwa
 ```text
 workflows/simbox/core/skills/
 ├── artpreplan.py   # Pre-plan for long-horizon tasks
-├── open.py         # Open articulated objects
-├── close.py        # Close articulated objects
+├── open.py         # Open or pull articulated objects
+├── close.py        # Close or push articulated objects
 └── rotate.py       # Rotate knobs / handles
 ```
 
 | Skill | Description | Use Cases |
 |-------|-------------|-----------|
 | `artpreplan` | Pre-plan / fake-plan for long-horizon tasks | Search for reasonable layouts before actual execution |
-| `open` | Open articulated objects | Microwave doors, cabinet doors, laptop screens, drawers |
-| `close` | Close articulated objects | Push microwaves closed, fold laptops, push drawers |
+| `open` | Open or pull articulated objects | Microwave doors, cabinet doors, laptop screens, drawers |
+| `close` | Close or push articulated objects | Push microwaves closed, fold laptops, push drawers |
 | `rotate` | Rotate knobs or handles | Twist oven knobs, turn handles |
 
 ### Skill Roles
@@ -283,11 +283,9 @@ Before defining constraints, keypoints must be annotated on both the robot gripp
 
 Defined in robot YAML under `fl_gripper_keypoints` / `fr_gripper_keypoints` (see [Robots](/concepts/robots/)):
 
-| Keypoint | Description |
-|----------|-------------|
-| `tool_head` | TCP position (fingertip center) |
-| `tool_tail` | Gripper base position |
-| `tool_side` | Side fingertip position |
+- **tool_head** (<span class="param-type">list</span>): TCP position (fingertip center).
+- **tool_tail** (<span class="param-type">list</span>): Gripper base position.
+- **tool_side** (<span class="param-type">list</span>): Side fingertip position.
 
 ![Gripper Keypoints](/gripper_kps.jpg)
 
@@ -397,15 +395,13 @@ This is used when the target axis is already known (e.g., the pulling direction 
 
 ## Configuration Reference
 
-| Parameter | Type | Default | Description |
-|-----------|------|---------|-------------|
-| `objects` | `list` | required | `[articulated_object_name]` |
-| `obj_info_path` | `string` | `None` | Path to articulation info YAML |
-| `planner_setting.contact_pose_index` | `int` | required | Keyframe index where gripper contacts object |
-| `planner_setting.success_threshold` | `float` | required | Joint displacement threshold for success |
-| `planner_setting.update_art_joint` | `bool` | `False` | Update articulation joint targets on success |
-| `planner_setting.constraint_list` | `list` | required | List of constraint definitions |
-| `ignore_substring` | `list` | `[]` | Collision filter substrings |
+- **objects** (<span class="param-type">list</span>, default: required): `[articulated_object_name]`.
+- **obj_info_path** (<span class="param-type">string</span>, default: `None`): Path to articulation info YAML.
+- **planner_setting.contact_pose_index** (<span class="param-type">int</span>, default: required): Keyframe index where gripper contacts object.
+- **planner_setting.success_threshold** (<span class="param-type">float</span>, default: required): Joint displacement threshold for success.
+- **planner_setting.update_art_joint** (<span class="param-type">bool</span>, default: `False`): Update articulation joint targets on success.
+- **planner_setting.constraint_list** (<span class="param-type">list</span>, default: required): List of constraint definitions.
+- **ignore_substring** (<span class="param-type">list</span>, default: `[]`): Collision filter substrings.
 
 
 ## References

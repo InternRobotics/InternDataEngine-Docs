@@ -19,12 +19,10 @@ We recommend starting with an OBJ file that includes:
 
 **Sources for OBJ Files:**
 
-| Source | Description |
-|--------|-------------|
-| Open-source datasets | Various public 3D model repositories |
-| ARCode | 3D reconstruction software for high-fidelity surface textures |
-| LiDAR-based apps | Reconstruction apps with depth sensors for mesh generation |
-| Tencent Hunyuan3D | Multi-view reconstruction for fine, non-convex, or transparent/specular objects |
+- **Open-source datasets** (<span class="param-type">source</span>): Various public 3D model repositories.
+- **ARCode** (<span class="param-type">source</span>): 3D reconstruction software for high-fidelity surface textures.
+- **LiDAR-based apps** (<span class="param-type">source</span>): Reconstruction apps with depth sensors for mesh generation.
+- **Tencent Hunyuan3D** (<span class="param-type">source</span>): Multi-view reconstruction for fine, non-convex, or transparent/specular objects.
 
 <div class="custom-tip">
 <p class="custom-tip-title">Hint</p>
@@ -214,7 +212,7 @@ More skills will be added gradually.
 
 Take `close_v` as an example - this skill handles horizontal closing motions like closing a microwave from the side. A sample asset is provided at `workflows/simbox/tools/art/close_v/7265/usd/`.
 
-### Step 3: Create keypoints_config.json
+### Step 3: Create keypoints_config.json (close_v example)
 
 After obtaining the original asset (e.g., `microwave_0.usd`), create a `keypoints_config.json` file with the following structure:
 
@@ -234,23 +232,21 @@ After obtaining the original asset (e.g., `microwave_0.usd`), create a `keypoint
 }
 ```
 
-| Configuration | Description |
-|---------------|-------------|
-| **DIR** | Directory where USD files are stored |
-| **USD_NAME** | Original USD file name |
-| **INSTANCE_NAME** | Model identifier (name it yourself, preferably matching the asset) |
-| **link0_initial_prim_path** | Absolute path in Isaac Sim for the "door" that interacts with the gripper |
-| **base_initial_prim_path** | Absolute path in Isaac Sim for the object base |
-| **revolute_joint_initial_prim_path** | Absolute path for the revolute joint |
-| **joint_index** | Joint number (default: 0) |
-| **LINK0_ROT_AXIS** | Axis pointing vertically upward in the rotating joint's local coordinate system |
-| **BASE_FRONT_AXIS** | Axis facing the door in the base link's local coordinate system |
-| **LINK0_CONTACT_AXIS** | Axis pointing vertically downward in the contact link's local coordinate system |
-| **SCALED_VOLUME** | Default value 0.02 for microwave-like objects |
+- **DIR** (<span class="param-type">str</span>): Directory where USD files are stored.
+- **USD_NAME** (<span class="param-type">str</span>): Original USD file name.
+- **INSTANCE_NAME** (<span class="param-type">str</span>): Model identifier (name it yourself, preferably matching the asset).
+- **link0_initial_prim_path** (<span class="param-type">str</span>): Absolute path in Isaac Sim for the "door" that interacts with the gripper.
+- **base_initial_prim_path** (<span class="param-type">str</span>): Absolute path in Isaac Sim for the object base.
+- **revolute_joint_initial_prim_path** (<span class="param-type">str</span>): Absolute path for the revolute joint.
+- **joint_index** (<span class="param-type">int</span>): Joint number (default: 0).
+- **LINK0_ROT_AXIS** (<span class="param-type">str</span>): Axis pointing vertically upward in the rotating joint's local coordinate system.
+- **BASE_FRONT_AXIS** (<span class="param-type">str</span>): Axis facing the door in the base link's local coordinate system.
+- **LINK0_CONTACT_AXIS** (<span class="param-type">str</span>): Axis pointing vertically downward in the contact link's local coordinate system.
+- **SCALED_VOLUME** (<span class="param-type">float</span>): Default value 0.02 for microwave-like objects.
 
 For detailed axis configuration with visual examples, refer to the [readme.md](https://github.com/InternRobotics/InternDataEngine/blob/master/workflows/simbox/tools/art/close_v/readme.md).
 
-### Step 4: Run the Keypoint Annotation Pipeline
+### Step 4: Run the Keypoint Annotation Pipeline (close_v example)
 
 Navigate to the tools directory and follow the pipeline in `keypoints_pipeline.sh`:
 
@@ -306,7 +302,7 @@ python transfer_keypoints.py --config $CONFIG_PATH
 python overwrite_keypoints.py --config $CONFIG_PATH
 ```
 
-### Step 5: Final Directory Structure
+### Step 5: Final Directory Structure (close_v example)
 
 After completing all steps, your asset directory should have the following structure:
 

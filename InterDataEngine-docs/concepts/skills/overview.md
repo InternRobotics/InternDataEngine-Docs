@@ -19,21 +19,21 @@ workflows/simbox/core/skills/
 ├── Pick-and-Place Skills
 │   ├── pick.py             # Standard pick operation
 │   ├── place.py            # Standard place operation
-│   ├── dexpick.py          # Dex-style pick with approach
+│   ├── dexpick.py          # Dex-style pick with constraints
 │   ├── dexplace.py         # Dex-style place with constraints
 │   ├── manualpick.py       # Manual grasp pose specification
 │   ├── dynamicpick.py      # Dynamic grasp selection
 │   └── failpick.py         # Failure case pick
 │
 ├── Articulation-Related Skills
-│   ├── open.py             # Open gripper/articulation
-│   ├── close.py            # Close gripper/articulation
+│   ├── open.py             # Open or pull articulation
+│   ├── close.py            # Close or push articulation
 │   ├── rotate.py           # Rotate articulation joint
 │   └── artpreplan.py       # Articulation pre-planning
 │
 ├── Heuristic Skills
 │   ├── goto_pose.py        # Move to target pose
-│   ├── gripper_action.py   # Generic gripper action
+│   ├── gripper_action.py   # Generic gripper action (Open, Close)
 │   ├── heuristic_skill.py  # Configurable heuristic actions
 │   ├── joint_ctrl.py       # Joint-level control
 │   └── wait.py             # Wait for duration
@@ -44,7 +44,7 @@ workflows/simbox/core/skills/
     ├── approach_rotate.py  # Approach with rotation
     ├── flip.py             # Flip object
     ├── scan.py             # Scan motion
-    └── pour_water_succ.py  # Pouring action
+    └── pour_water_succ.py  # Pouring metric
 ```
 
 ## Skill Template
@@ -105,12 +105,10 @@ manip_list = [
 
 **Command tuple structure:**
 
-| Component | Type | Description |
-|-----------|------|-------------|
-| `p_base_ee_tgt` | `np.ndarray (3,)` | Target end-effector position in arm base frame |
-| `q_base_ee_tgt` | `np.ndarray (4,)` | Target end-effector quaternion `(w, x, y, z)` |
-| `function_name` | `str` | Action function to execute |
-| `params` | `dict` | Parameters for the action function |
+- **p_base_ee_tgt** (<span class="param-type">np.ndarray</span>): Target end-effector position in arm base frame, shape `(3,)`.
+- **q_base_ee_tgt** (<span class="param-type">np.ndarray</span>): Target end-effector quaternion `(w, x, y, z)` in arm base frame, shape `(4,)`.
+- **function_name** (<span class="param-type">str</span>): Action function to execute.
+- **params** (<span class="param-type">dict</span>): Parameters for the action function.
 
 **Common action functions:**
 

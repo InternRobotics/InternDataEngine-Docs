@@ -7,6 +7,7 @@ description: Standard pick operation for grasping objects
 
 The `Pick` skill performs a standard pick operation with grasp pose selection. It loads pre-annotated grasp poses from `.npy` files, filters them based on orientation constraints, and executes the pick motion.
 
+Code Example:
 ```python
 # Source workflows/simbox/core/skills/pick.py
 import os
@@ -458,25 +459,18 @@ The end-effector frame has its own local X, Y, Z axes. The filter constraints co
 
 ### Filter Parameters
 
-| Parameter | Description |
-|-----------|-------------|
-| `filter_x_dir` | Filter based on EE's X-axis direction in arm base frame |
-| `filter_y_dir` | Filter based on EE's Y-axis direction in arm base frame |
-| `filter_z_dir` | Filter based on EE's Z-axis direction in arm base frame |
+- **filter_x_dir** (<span class="param-type">list</span>): Filter based on EE's X-axis direction in arm base frame.
+- **filter_y_dir** (<span class="param-type">list</span>): Filter based on EE's Y-axis direction in arm base frame.
+- **filter_z_dir** (<span class="param-type">list</span>): Filter based on EE's Z-axis direction in arm base frame.
 
 **Format**: `[direction, angle]` or `[direction, angle_min, angle_max]`
 
-- **direction**: Target direction (`"forward"`, `"backward"`, `"upward"`, `"downward"`)
-- **angle**: Minimum angle (degrees) between EE axis and arm base's positive direction
-
 ### Direction Mapping
 
-| Direction | Condition |
-|-----------|-----------|
-| `forward` | EE axis dot arm_base_X ≥ cos(angle) |
-| `backward` | EE axis dot arm_base_X ≤ cos(angle) |
-| `upward` | EE axis dot arm_base_Z ≥ cos(angle) |
-| `downward` | EE axis dot arm_base_Z ≤ cos(angle) |
+- **forward**: EE axis dot arm_base_X ≥ cos(angle)
+- **backward**: EE axis dot arm_base_X ≤ cos(angle)
+- **upward**: EE axis dot arm_base_Z ≥ cos(angle)
+- **downward**: EE axis dot arm_base_Z ≤ cos(angle)
 
 **Positive sign**: Use `≥ cos(angle)` when direction is positive (forward/upward)
 
@@ -591,28 +585,26 @@ Result: Gripper approaches from above, facing forward — same physical outcome 
 
 ## Configuration Reference
 
-| Parameter | Type | Default | Description |
-|-----------|------|---------|-------------|
-| `objects` | `list` | required | Target object names |
-| `npy_name` | `string` | `"Aligned_grasp_sparse.npy"` | Grasp annotation file name |
-| `grasp_scale` | `float` | `1` | Scale factor for grasp poses |
-| `tcp_offset` | `float` | `robot.tcp_offset` | TCP offset override |
-| `constraints` | `dict` | `None` | Additional grasp constraints |
-| `final_gripper_state` | `int` | `-1` | Gripper state after pick: `1` (open) or `-1` (close) |
-| `fixed_orientation` | `list` | `None` | Fixed quaternion `[w, x, y, z]` if specified |
-| `filter_x_dir` | `list` | `None` | EE X-axis filter: `[direction, angle]` |
-| `filter_y_dir` | `list` | `None` | EE Y-axis filter: `[direction, angle]` |
-| `filter_z_dir` | `list` | `None` | EE Z-axis filter: `[direction, angle]` |
-| `direction_to_obj` | `string` | `None` | Filter by object position: `"left"` or `"right"` |
-| `pre_grasp_offset` | `float` | `0.1` | Distance to offset before grasp (meters) |
-| `pre_grasp_hold_vec_weight` | `list` | `None` | Hold vector weight at pre-grasp |
-| `gripper_change_steps` | `int` | `40` | Steps to close gripper |
-| `post_grasp_offset_min` | `float` | `0.05` | Minimum lift distance (meters) |
-| `post_grasp_offset_max` | `float` | `0.05` | Maximum lift distance (meters) |
-| `return_to_pregrasp` | `bool` | `False` | Return to pre-grasp pose after lift |
-| `lift_th` | `float` | `0.0` | Lift threshold for success check (meters) |
-| `ignore_substring` | `list` | `[]` | Collision filter substrings |
-| `test_mode` | `string` | `"forward"` | Motion test mode: `"forward"` or `"ik"` |
-| `t_eps` | `float` | `1e-3` | Translation tolerance (meters) |
-| `o_eps` | `float` | `5e-3` | Orientation tolerance (radians) |
-| `process_valid` | `bool` | `True` | Check motion validity for success |
+- **objects** (<span class="param-type">list</span>, default: required): Target object names.
+- **npy_name** (<span class="param-type">string</span>, default: `"Aligned_grasp_sparse.npy"`): Grasp annotation file name.
+- **grasp_scale** (<span class="param-type">float</span>, default: `1`): Scale factor for grasp poses.
+- **tcp_offset** (<span class="param-type">float</span>, default: `robot.tcp_offset`): TCP offset override.
+- **constraints** (<span class="param-type">dict</span>, default: `None`): Additional grasp constraints.
+- **final_gripper_state** (<span class="param-type">int</span>, default: `-1`): Gripper state after pick: `1` (open) or `-1` (close).
+- **fixed_orientation** (<span class="param-type">list</span>, default: `None`): Fixed quaternion `[w, x, y, z]` if specified.
+- **filter_x_dir** (<span class="param-type">list</span>, default: `None`): EE X-axis filter: `[direction, angle]`.
+- **filter_y_dir** (<span class="param-type">list</span>, default: `None`): EE Y-axis filter: `[direction, angle]`.
+- **filter_z_dir** (<span class="param-type">list</span>, default: `None`): EE Z-axis filter: `[direction, angle]`.
+- **direction_to_obj** (<span class="param-type">string</span>, default: `None`): Filter by object position: `"left"` or `"right"`.
+- **pre_grasp_offset** (<span class="param-type">float</span>, default: `0.1`): Distance to offset before grasp (meters).
+- **pre_grasp_hold_vec_weight** (<span class="param-type">list</span>, default: `None`): Hold vector weight at pre-grasp.
+- **gripper_change_steps** (<span class="param-type">int</span>, default: `40`): Steps to close gripper.
+- **post_grasp_offset_min** (<span class="param-type">float</span>, default: `0.05`): Minimum lift distance (meters).
+- **post_grasp_offset_max** (<span class="param-type">float</span>, default: `0.05`): Maximum lift distance (meters).
+- **return_to_pregrasp** (<span class="param-type">bool</span>, default: `False`): Return to pre-grasp pose after lift.
+- **lift_th** (<span class="param-type">float</span>, default: `0.0`): Lift threshold for success check (meters).
+- **ignore_substring** (<span class="param-type">list</span>, default: `[]`): Collision filter substrings.
+- **test_mode** (<span class="param-type">string</span>, default: `"forward"`): Motion test mode: `"forward"` or `"ik"`.
+- **t_eps** (<span class="param-type">float</span>, default: `1e-3`): Translation tolerance (meters).
+- **o_eps** (<span class="param-type">float</span>, default: `5e-3`): Orientation tolerance (radians).
+- **process_valid** (<span class="param-type">bool</span>, default: `True`): Check motion validity for success.

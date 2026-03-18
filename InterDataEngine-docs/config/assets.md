@@ -40,14 +40,12 @@ workflows/simbox/assets/
 
 To run a simulation task, the following assets are required:
 
-| Asset Type | Path | Purpose |
-|------------|------|---------|
-| Environment Maps | `envmap_lib/` | HDR lighting for scene illumination |
-| Background Textures | `background_textures/` | Domain randomization backgrounds |
-| Floor Textures | `floor_textures/` | Floor appearance variation |
-| Table Model | `table0/` | Default table fixture |
-| Robot Assets | e.g., `lift2/` | Robot USD and kinematics configs |
-| Task Assets | e.g., `basic/<task_name>/` | Objects specific to each task |
+- **Environment Maps** (`envmap_lib/`): HDR lighting for scene illumination.
+- **Background Textures** (`background_textures/`): Domain randomization backgrounds.
+- **Floor Textures** (`floor_textures/`): Floor appearance variation.
+- **Table Model** (`table0/`): Default table fixture.
+- **Robot Assets** (e.g., `lift2/`): Robot USD and kinematics configs.
+- **Task Assets** (e.g., `basic/<task_name>/`): Objects specific to each task.
 
 ## Rigid Object Assets
 
@@ -86,11 +84,9 @@ workflows/simbox/example_assets/task/sort_the_rubbish/non_recyclable_garbage/obj
 
 **File Naming Conventions:**
 
-| File | Description |
-|------|-------------|
-| `Aligned_obj.usd` | USD file containing the 3D model with complete physics properties (mass, collision mesh, etc.) |
-| `Aligned_grasp_sparse.npy` | Grasp pose annotations for manipulation tasks |
-| `textures/` | Directory containing texture maps for the object |
+- **Aligned_obj.usd** (<span class="param-type">file</span>): USD file containing the 3D model with complete physics properties (mass, collision mesh, etc.).
+- **Aligned_grasp_sparse.npy** (<span class="param-type">file</span>): Grasp pose annotations for manipulation tasks.
+- **textures/** (<span class="param-type">directory</span>): Directory containing texture maps for the object.
 
 ## Articulated Object Assets
 
@@ -128,13 +124,11 @@ workflows/simbox/assets/art/electriccooker/electriccooker_0031/
 
 **File Naming Conventions:**
 
-| File | Description |
-|------|-------------|
-| `instance.usd` | USD file for articulated objects (unlike rigid objects which use `Aligned_obj.usd`) |
-| `instance.png` | Preview/thumbnail image |
-| `Materials/` | Material and texture definitions |
-| `Kps/` | Keypoint annotations for interaction points |
-| `Kps/<action_type>/` | Action-specific keypoints (e.g., `close_h` for closing horizontally) |
+- **instance.usd** (<span class="param-type">file</span>): USD file for articulated objects (unlike rigid objects which use `Aligned_obj.usd`).
+- **instance.png** (<span class="param-type">file</span>): Preview/thumbnail image.
+- **Materials/** (<span class="param-type">directory</span>): Material and texture definitions.
+- **Kps/** (<span class="param-type">directory</span>): Keypoint annotations for interaction points.
+- **Kps/<action_type>/** (<span class="param-type">directory</span>): Action-specific keypoints (e.g., `close_h` for closing horizontally).
 
 ### Keypoint Annotations
 
@@ -153,11 +147,9 @@ Kps/
 
 Each action folder contains:
 
-| File | Description |
-|------|-------------|
-| `keypoints.json` | Initial keypoint positions |
-| `keypoints_final.json` | Final/processed keypoint positions |
-| `info.json` | Metadata about the keypoints |
+- **keypoints.json** (<span class="param-type">file</span>): Initial keypoint positions.
+- **keypoints_final.json** (<span class="param-type">file</span>): Final/processed keypoint positions.
+- **info.json** (<span class="param-type">file</span>): Metadata about the keypoints.
 
 ## Asset Configuration
 

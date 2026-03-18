@@ -249,11 +249,9 @@ def A_on_B_region_sampler(obj, tgt, pos_range, yaw_rotation):
 
 ## Key Files
 
-| File | Purpose |
-|------|---------|
-| `utils/dr.py` | Randomization utilities |
-| `utils/constants.py` | Category parameters |
-| `tasks/banana.py` | Randomization implementation |
+- **utils/dr.py** (<span class="param-type">file</span>): Randomization utilities.
+- **utils/constants.py** (<span class="param-type">file</span>): Category parameters.
+- **tasks/banana.py** (<span class="param-type">file</span>): Randomization implementation.
 
 ## References
 
