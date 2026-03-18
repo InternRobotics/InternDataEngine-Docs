@@ -65,17 +65,17 @@ objects:
 
 ### Configuration Parameters
 
-- **name** (*str*): Unique identifier for this object instance.
-- **path** (*str*): Path to the USD file containing the object mesh.
-- **target_class** (*str*): Must be `RigidObject` for rigid bodies.
-- **dataset** (*str*): Dataset source identifier.
-- **category** (*str*): Object category name.
-- **prim_path_child** (*str*): Name of the child prim that contains the mesh.
-- **translation** (*list*): Initial position [x, y, z] in world coordinates.
-- **euler** (*list*): Initial rotation in degrees [roll, pitch, yaw].
-- **scale** (*list*): Scale factors for each axis.
-- **apply_randomization** (*bool*): Whether to apply domain randomization.
-- **orientation_mode** (*str*): Orientation mode for randomization.
+- **name** (<span class="param-type">str</span>): Unique identifier for this object instance.
+- **path** (<span class="param-type">str</span>): Path to the USD file containing the object mesh.
+- **target_class** (<span class="param-type">str</span>): Must be `RigidObject` for rigid bodies.
+- **dataset** (<span class="param-type">str</span>): Dataset source identifier.
+- **category** (<span class="param-type">str</span>): Object category name.
+- **prim_path_child** (<span class="param-type">str</span>): Name of the child prim that contains the mesh.
+- **translation** (<span class="param-type">list</span>): Initial position [x, y, z] in world coordinates.
+- **euler** (<span class="param-type">list</span>): Initial rotation in degrees [roll, pitch, yaw].
+- **scale** (<span class="param-type">list</span>): Scale factors for each axis.
+- **apply_randomization** (<span class="param-type">bool</span>): Whether to apply domain randomization.
+- **orientation_mode** (<span class="param-type">str</span>): Orientation mode for randomization.
 
 
 ## GeometryObject
@@ -119,11 +119,11 @@ objects:
 
 ### Configuration Parameters
 
-- **name** (*str*): Unique identifier for this object.
-- **path** (*str*): Path to the USD file.
-- **target_class** (*str*): Must be `GeometryObject` for static geometry.
-- **translation** (*list*): Position in world coordinates.
-- **scale** (*list*): Scale factors for each axis.
+- **name** (<span class="param-type">str</span>): Unique identifier for this object.
+- **path** (<span class="param-type">str</span>): Path to the USD file.
+- **target_class** (<span class="param-type">str</span>): Must be `GeometryObject` for static geometry.
+- **translation** (<span class="param-type">list</span>): Position in world coordinates.
+- **scale** (<span class="param-type">list</span>): Scale factors for each axis.
 
 
 ## PlaneObject
@@ -211,15 +211,15 @@ objects:
 
 ### Configuration Parameters
 
-- **name** (*str*): Unique identifier for the plane.
-- **target_class** (*str*): Must be `PlaneObject`.
-- **size** (*list*): Plane dimensions [width, height].
-- **translation** (*list*): Position [x, y, z].
-- **euler** (*list*): Rotation angles [roll, pitch, yaw] in degrees.
-- **texture.texture_lib** (*str*): Name of texture library folder.
-- **texture.apply_randomization** (*bool*): Whether to randomize texture selection.
-- **texture.texture_id** (*int*): Specific texture ID (used when randomization is False).
-- **texture.texture_scale** (*list*): Scale factors for texture UV mapping.
+- **name** (<span class="param-type">str</span>): Unique identifier for the plane.
+- **target_class** (<span class="param-type">str</span>): Must be `PlaneObject`.
+- **size** (<span class="param-type">list</span>): Plane dimensions [width, height].
+- **translation** (<span class="param-type">list</span>): Position [x, y, z].
+- **euler** (<span class="param-type">list</span>): Rotation angles [roll, pitch, yaw] in degrees.
+- **texture.texture_lib** (<span class="param-type">str</span>): Name of texture library folder.
+- **texture.apply_randomization** (<span class="param-type">bool</span>): Whether to randomize texture selection.
+- **texture.texture_id** (<span class="param-type">int</span>): Specific texture ID (used when randomization is False).
+- **texture.texture_scale** (<span class="param-type">list</span>): Scale factors for texture UV mapping.
 
 
 ## ArticulatedObject
@@ -299,11 +299,11 @@ objects:
 
 ### Configuration Parameters
 
-- **name** (*str*): Unique identifier for the articulated object.
-- **target_class** (*str*): Must be `ArticulatedObject`.
-- **info_name** (*str*): Name of the skill folder containing `info.json`.
-- **euler** (*list*): Initial rotation [roll, pitch, yaw] in degrees.
-- **joint_position_range** (*list*): Random range for initial joint position [min, max].
-- **apply_randomization** (*bool*): Whether to apply domain randomization.
-- **path** (*str*): Path to the USD file (relative to asset_root).
-- **category** (*str*): Object category identifier.
+- **name** (<span class="param-type">str</span>): Unique identifier for the articulated object.
+- **target_class** (<span class="param-type">str</span>): Must be `ArticulatedObject`.
+- **info_name** (<span class="param-type">str</span>): Name of the skill folder containing `info.json`.
+- **euler** (<span class="param-type">list</span>): Initial rotation [roll, pitch, yaw] in degrees.
+- **joint_position_range** (<span class="param-type">list</span>): Random range for initial joint position [min, max].
+- **apply_randomization** (<span class="param-type">bool</span>): Whether to apply domain randomization.
+- **path** (<span class="param-type">str</span>): Path to the USD file (relative to asset_root).
+- **category** (<span class="param-type">str</span>): Object category identifier.
