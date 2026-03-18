@@ -20,8 +20,8 @@ Before installing InternDataEngine, ensure the following requirements are met:
 ## Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/your-org/InternDataEngine.git
-cd YOUR_PATH_TO_DATA_ENGINE
+git clone https://github.com/InternRobotics/InternDataEngine.git
+cd InternDataEngine
 ```
 
 ## Step 2: Prepare Isaac Sim
@@ -42,9 +42,6 @@ InternDataAssets/
 ```
 
 ### 3.1 Scene Assets
-
-> **Tip**: The full asset collection is large. Download selectively based on your needs.
-
 **Required assets** (needed for all tasks):
 
 - `background_textures`, `envmap_lib`, `floor_textures`, `table_textures` — Domain Randomization materials
@@ -78,9 +75,14 @@ bash scripts/download_assets.sh [OPTIONS]
 # Minimum assets + CuRobo + panda_drake
 bash scripts/download_assets.sh --min --with-curobo --with-drake
 
-# Full download
+# Full download (~200GB)
 bash scripts/download_assets.sh --full --with-curobo --with-drake
 ```
+
+<div class="custom-tip">
+<p class="custom-tip-title">Hint</p>
+<p class="custom-tip-content">The full asset collection is large, so download selectively based on your needs. Because the background, floor, and table textures contain many images for domain randomization, if your download speed is slow or disk space is limited, you can download only a small subset (e.g., 10+ images per directory) for debugging.</p>
+</div>
 
 ### 3.2 CuRobo
 
@@ -92,7 +94,7 @@ If CuRobo is not yet installed, you can also get the source from [NVlabs/curobo]
 ## Step 4: Create Symlinks
 
 ```bash
-cd YOUR_PATH_TO_DATA_ENGINE/workflows/simbox
+cd InternDataEngine/workflows/simbox
 ln -s YOUR_PATH_TO_ASSETS assets
 ln -s YOUR_PATH_TO_CUROBO curobo
 ln -s YOUR_PATH_TO_PANDA_DRAKE panda_drake
@@ -103,7 +105,7 @@ ln -s YOUR_PATH_TO_PANDA_DRAKE panda_drake
 ### Option A: Using Isaac Sim's Built-in Python
 
 ```bash
-cd YOUR_PATH_TO_DATA_ENGINE
+cd InternDataEngine
 YOUR_PATH_TO_ISAACSIM/python.sh -m pip install --upgrade pip
 YOUR_PATH_TO_ISAACSIM/python.sh -m pip install -r requirements.txt
 ```
@@ -114,6 +116,7 @@ YOUR_PATH_TO_ISAACSIM/python.sh -m pip install -r requirements.txt
 conda create -n banana python=3.10
 conda activate banana
 source YOUR_PATH_TO_ISAACSIM/setup_conda_env.sh
+cd InternDataEngine
 pip install --upgrade pip
 pip install -r requirements.txt
 ```
@@ -125,7 +128,7 @@ pip install -r requirements.txt
 Refer to the [CuRobo installation docs](https://curobo.org/get_started/1_install_instructions.html), specifically the **Install for use in Isaac Sim** section, then run:
 
 ```bash
-cd YOUR_PATH_TO_DATA_ENGINE/workflows/simbox/curobo
+cd InternDataEngine/workflows/simbox/curobo
 YOUR_PATH_TO_ISAACSIM/python.sh -m pip install -e .[isaacsim] --no-build-isolation
 ```
 

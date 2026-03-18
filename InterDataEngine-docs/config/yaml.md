@@ -13,20 +13,24 @@ A task YAML file defines all components needed for a simulation episode: environ
 
 ## World Settings
 
-Global simulation settings are defined in `workflows/simbox/core/configs/world.yaml`:
+Global simulation settings are defined in the YAML files under `configs/simbox`:
 
 ```yaml
-world:
-  physics_dt: 1/30
-  rendering_dt: 1/30
-  stage_units_in_meters: 1.0
+simulator:
+  physics_dt: 1/30                   # Physics update rate
+  rendering_dt: 1/30                 # Render update rate
+  stage_units_in_meters: 1.0         # Stage unit scale
+  headless: True                     # Run without GUI; set to False for visual debugging
+  anti_aliasing: 0                   # Anti-aliasing level
 ```
 
 | Field | Description |
 |-------|-------------|
-| `physics_dt` | Physics simulation timestep (seconds) |
-| `rendering_dt` | Rendering timestep (seconds) |
-| `stage_units_in_meters` | Unit scale for the USD stage |
+| `physics_dt` | Physics simulation time step (in seconds). |
+| `rendering_dt` | Rendering time step (in seconds). |
+| `stage_units_in_meters` | Unit scale used for the USD stage. |
+| `headless` | Run without GUI; set to `False` for visual debugging. |
+| `anti_aliasing` | Anti-aliasing level (0 = disabled). |
 
 ## Task Basic Configuration
 
